@@ -41,7 +41,7 @@ body {
 .display {
     border: 2px solid var(--color-charcoal);
     width: 50%;
-    height: 150px;
+    height: 250px;
     background: var(--color-purple);
     text-align: center;
     font-size: 3rem;
@@ -53,12 +53,12 @@ body {
     display: flex;
     padding: 2px;
     justify-content: center;
-    font-size: ;
+    
 }
 
 .increment, .decrement {
     background: var(--color-charcoal);
-    width: 25%;
+    width: 17%;
     height: 100px;
     margin: 1px;
     font-size: 3rem;
@@ -66,10 +66,10 @@ body {
 
 .resets {
     background: var(--color-charcoal);
-    width: 25%;
+    width: 16%;
     height: 100px;
     margin: 1px;
-    font-size: 2rem;
+    font-size: 1.6rem;
 
 }
 
