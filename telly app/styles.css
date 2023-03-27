@@ -64,6 +64,19 @@ body {
     font-size: 3rem;
 }
 
-.increment, .decrement:disabled {
-    
+.resets {
+    background: var(--color-charcoal);
+    width: 25%;
+    height: 100px;
+    margin: 1px;
+    font-size: 2rem;
+
+}
+
+ .decrement:disabled {
+    background: red;
+}
+
+.increment:disabled {
+    background: red;
 }
