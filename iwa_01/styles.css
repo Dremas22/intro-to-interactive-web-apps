@@ -63,3 +63,7 @@ body {
     margin: 1px;
     font-size: 3rem;
 }
+
+.increment, .decrement:disabled {
+    
+}
