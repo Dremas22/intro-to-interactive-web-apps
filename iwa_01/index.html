@@ -16,7 +16,7 @@
     <header>
         <h1>Tally Counter</h1>
 
-        <div class="counter__div">
+        <div class="selections">
 
             <label>
                 <span>Display</span>
@@ -37,12 +37,12 @@
         </div>
     </header>
 
-    <main>
-        <div class="display" read only="1000">
+    <main class="controls">
+        <input class="display" data-key="number" readonly value="0">
         </div>
         <div class="container">
-            <div class="increment"></div>
-            <div class="decrement"></div>
+            <button data-key="addition" class="increment">+</button>
+            <button data-key="subtraction" class="decrement">-</button>
         </div>
     </main>
 
