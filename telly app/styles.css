@@ -2,6 +2,7 @@
     --color-grey: #B0A8B9;
     --color-purple: #845EC2;
     --color-charcoal: #444553;
+    --color-red: #D63423;
 }
 
 * {
@@ -44,7 +45,8 @@ body {
     height: 250px;
     background: var(--color-purple);
     text-align: center;
-    font-size: 5rem;
+    font-size: 8rem;
+    color: var(--color-charcoal);
     font-weight: bold;
     
 }
@@ -70,13 +72,14 @@ body {
     height: 100px;
     margin: 1px;
     font-size: 1.6rem;
+    
 
 }
 
  .decrement:disabled {
-    background: red;
+    background: var(--color-red);
 }
 
 .increment:disabled {
-    background: red;
+    background: var(--color-red);
 }
