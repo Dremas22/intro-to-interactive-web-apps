@@ -1,3 +1,4 @@
+
 const user = 'John';
 const surname = 'Smith';
 const str = "Hello tshepo"
