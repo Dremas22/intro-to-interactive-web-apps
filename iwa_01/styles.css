@@ -1,0 +1,45 @@
+:root {
+    --color-grey: #B0A8B9;
+    --color-purple: #845EC2;
+    --color-charcoal: #444553;
+}
+
+* {
+    box-sizing: border-box;
+
+}
+
+header {
+    color: var(--color-charcoal);
+}
+
+body {
+    background: var(--color-grey);
+    font-family: Roboto,sans serif;
+    text-align: center;
+
+}
+
+main {
+    justify-self: center;
+}
+
+.display {
+    border: 2px solid var(--color-charcoal);
+    width: 50%;
+    height: 150px;
+    background: var(--color-purple);
+    justify-self: center;
+}
+
+.container {
+    display: flex;
+    padding: 2px;
+}
+
+.increment, .decrement {
+    background: var(--color-charcoal);
+    width: 25%;
+    height: 100px;
+    margin: 1px;
+}

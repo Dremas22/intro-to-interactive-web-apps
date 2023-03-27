@@ -6,13 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tally counter</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
+
 <body>
+
     <header>
-        <div class="display">
-            
+        <h1>Tally Counter</h1>
+
+        <div class="counter__div">
+
+            <label>
+                <span>Display</span>
+                <select>
+                    <option>Single</option>
+                    <option>Multiple</option>
+                </select>
+            </label>
+
+            <label>
+                <span>Counter</span>
+                <select>
+                    <option>Counter 1</option>
+                    <option>Multiple</option>
+                </select>
+            </label>
+
         </div>
     </header>
+
+    <main>
+        <div class="display" read only="1000">
+        </div>
+        <div class="container">
+            <div class="increment"></div>
+            <div class="decrement"></div>
+        </div>
+    </main>
+
     <script src="index.js"></script>
 </body>
 </html>
