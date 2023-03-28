@@ -38,3 +38,5 @@ const resettingHandler = () => {
 add.addEventListener('click', increaseHandler);
 subtract.addEventListener('click', decreaseHandler);
 reset.addEventListener('click', resettingHandler)
+
+console.log("Tshepo");
