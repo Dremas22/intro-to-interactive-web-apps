@@ -1,8 +1,8 @@
-// johannes.js
+// Exporting Johannes data to our main script
 
-private firstname = "Johannes"
-private surname = "Potgieter"
-public role = "Intern"
-
-private display= firstname + " " + surname + " (" + role + ")"
-document.querySelector('#johannes').innerText = display
+export const johannesData = () => {
+    const firstname = "Johannes";
+    const surname = "Potgieter";
+    const role = "Intern";
+    console.log(firstname, surname, role)
+}

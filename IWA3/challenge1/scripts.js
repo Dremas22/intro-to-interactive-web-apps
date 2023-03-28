@@ -1,6 +1,10 @@
-import { company } from './configuration.js'
-import { year } from './configuration.js'
+ /* Importing variables*/
 
-var message = '© ' + company + ' (' + year + ')';
+import { company } from './configuration.js';
+import { year } from './configuration.js';
 
-document.querySelector('footer').innerText = message;
+
+const message = document.getElementById('show');
+message.innerText =  company + " " + year;
+
+

@@ -1,8 +1,13 @@
-// nwabisa.js
+//Exporting  nwabisa's data to our main script file
 
-private firstname = "Nwabisa"
-private surname = "Gabe"
-public role = "CEO"
+export const nwabisaData = () => {
+    const firstname = "Nwabisa";
+    const surname = "Gabe";
+    const role = "CEO";
+    console.log(firstname, surname, role)
+}
 
-private display= firstname + " " + surname + " (" + role + ")"
-document.querySelector('#nwabisa').innerText = display
+
+ 
+
+
