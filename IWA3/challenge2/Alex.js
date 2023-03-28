@@ -1,8 +1,5 @@
 //exporting Alex's data to our main script
 
-export const alexData = () => {
-    const firstname = "Alex";
-    const surname = "";
-    const role = "Head of Marketing";
-    console.log(firstname, surname, role)
-}
+ export  const firstname2 = "Alex";
+ export  const surname2 = "";
+ export  const role2 = "Head of Marketing";
