@@ -1,4 +1,4 @@
-let count = 0;
+let count = 0; //use local variable type. 
 
 if (date = 2050) {
 
@@ -8,7 +8,7 @@ if (date = 2050) {
 	let monthFour = 'April'; //assign a local variable for April
 	console.log(monthFour, 'Family Day');
 	console.log(monthFour, 'Freedom Day');
-	count = count + 2; //remove let because count variable is already been declared with a "const"
+	count += 2; //remove let because count variable is already been declared with a "const"
 
 	if (status = "student") {
 	   console.log('June', 'Youth Day')
