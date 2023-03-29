@@ -21,5 +21,7 @@ import {  role3 } from './Johannes.js';
 const displayJohannes = document.getElementById('johannes');
 displayJohannes.innerText = firstname3 + " " + surname3 + ": " + role3;
 
-const displayRoles = document.getElementById('display__roles');
-displayRoles.innerText = 'Roles:' + " " + role1 +", " + role3 + ", " + role2;
+//const displayRoles = document.getElementById('display__roles');
+//displayRoles.innerText = 'Roles:' + " " + role1 +", " + role3 + ", " + role2;
+
+console.log('Roles: ', role1, role2, role3);
