@@ -2,22 +2,22 @@
 //---Correctly assign varibles---- // 
 
 const FREE_WARNING = 'Free shipping only applies to single customer orders';
-const BANNED_WARNIN = 'Unfortunately we do not ship to your country of residence'
+const BANNED_WARNING = 'Unfortunately we do not ship to your country of residence'
 const NONE_SELECTED = '0'
-let shippingCost = 0;
+let shipping = 0;
 
 //---- THE ABOVE CODE DID NOT FOLLOW JAVASCRIPT CODING RULES AND IT IS UNSTRUCTURED-----//
 const checkShippingLocation = () => {
     let location = ""; //---location variable must be determined by user input or selection---//
     if (location = "RSA") {
-        console.log(shippingCost === 400 && currency === 'R');
+        console.log(shipping === 400 && currency === 'R');
     } else if (location = "NAM") {
-        console.log(shippingCost === 600 && currency === '$');
+        console.log(shipping === 600 && currency === '$');
     } else if (location = "Korea") {
-        console.log(BANNED_WARNIN);
+        console.log(BANNED_WARNING);
     }
      else {
-        console.log(shippingCost === 800 && currency === '$');
+        console.log(shipping === 800 && currency === '$');
     }
 }
 console.log(checkShippingLocation);
@@ -29,31 +29,25 @@ hirts = 150 * 'NONE_SELECTED'
 batteries 35 * 2
 pens = 5 * 'NONE_SELECTED' */
 
-//---- THE SCRIPT IS FOR COST CALCULATING, NOT FOR PRODUCT SELECTION-----//
+//---- CALCULATING TOTAL USER COST-----//
 
-const noShippingCost = () => {
-    let userCost = 0;
+const calShippingCost = () => {
+    let price = 0;
     let user = 0;
     let location = "";
-    const checkUserCost = userCost >= 1000 && user === 1 && location === "RSA" || "NAM" ? shippingCost = 0 : FREE_WARNING
+    const checkUserCost = price >= 1000 && user === 1 && location === "RSA" || "NAM" ? shipping = 0 : FREE_WARNING
     console.log(checkUserCost);
 }
 
-/*shipping = null 
-currency = $*/
+{
+currency = "R";
+shoes = 300;
+toys = 500;
+battries = 70;
+let location = "RSA"
+let user = 1;
+const userLocation =  (location ==="RSA") && (user === 1);
+const Price = userLocation ?  400 && currency === "R" : 600 && currency === "$"
+console.log(Price, 'Price:' + currency + `${shoes + toys + battries + 400}` );
 
-/*if (shoes + batteries + pens + shirts > 1000 &&  ) {
-	if (location = NAM && customers < 2) {
-			if (location = RSA)
-		    shipping = 0 || calcShipping
-		}
-	}
-}*/
-
-/*if (shipping = 0) && (customers !=== 1) { console.log(WARNING) }
-
-location = 'NK' ? console.log(WARNING) : console.log('price', currency, shoes + batteries + pens + shirts + shipping)
-
-customers = '1'
-
-currency = null*/
+}
