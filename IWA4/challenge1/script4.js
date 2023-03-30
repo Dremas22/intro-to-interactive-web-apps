@@ -1,9 +1,10 @@
 let count = 0; //use local variable type. 
+let status = "parent";
 
 if (date = 2050) {
 
     const date = 2050;
-    let status = "";
+    let status = "parent";
 
 	let monthFour = 'April'; //assign a local variable for April
 	console.log(monthFour, 'Family Day');
@@ -13,12 +14,12 @@ if (date = 2050) {
 	if (status = "student") {
 	   console.log('June', 'Youth Day')
 	   count += 1;
-    } //indent code block()
 
-    if (status = "parent") {
-        console.log(date, 'Christmas Day')
-        count += 1;
+	}  else  {
+          console.log(date, 'Christmas Day')
+          count += 1;
     }
+		
 
     console.log("January", "New Year’s Day")
     console.log("March", 'Human Rights Day')
@@ -34,6 +35,6 @@ if (date = 2050) {
 	count += 1;
 }
 
-console.log('Your status is:', "Parent or Student")
+console.log('Your status is:', status)
 console.log('The year is:', date)
 console.log('The total holidays is:', count)
