@@ -40,6 +40,9 @@ const calShippingCost = () => {
 }
 
 {
+
+//---- USER BOUGHT SOME ITEMS, WE WANT TO TEST IF OUR ITENARY CODE CAN EXECUTE-----//
+
 currency = "R";
 shoes = 300;
 toys = 500;
