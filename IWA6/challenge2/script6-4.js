@@ -16,7 +16,7 @@ const minuteOfDay = 00;
 
 const taxAsDecimal = parseInt(tax) / 100;
 const salaryAfterTax = salary * (1 - taxAsDecimal);
-const checkTime = (hourOfDay === 00 && minuteOfDay == 00);
+const checkTime = (hourOfDay === 00 && minuteOfDay === 00);
 let balance = 0;
 const userBalance = checkTime ? balance = salaryAfterTax - transport - food - rent : balance = 0;
 
