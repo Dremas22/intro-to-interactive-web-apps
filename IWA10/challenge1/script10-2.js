@@ -47,7 +47,7 @@ const holidays = {
         date: new Date(`21 March ${currentYear}`)
     },
 
-   /* 9: {
+    /*9: {
         id: 9,
         name: "Tshepo"
     } */

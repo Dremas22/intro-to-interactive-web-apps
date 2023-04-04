@@ -39,7 +39,7 @@ const calShippingCost = () => {
     console.log(checkUserCost);
 }
 
-{
+
 
 //---- USER BOUGHT SOME ITEMS, WE WANT TO TEST IF OUR ITINARY CODE CAN EXECUTE-----//
 
@@ -47,10 +47,10 @@ currency = "R";
 shoes = 300;
 toys = 500;
 battries = 70;
-let location = "RSA"
+let destination = "RSA"
 let user = 1;
-const userLocation =  (location ==="RSA") && (user === 1);
+const userLocation =  (destination ==="RSA") && (user === 1);
 const Price = userLocation ?  400 && currency === "R" : 600 && currency === "$"
-console.log(Price, 'Price:' + currency + `${shoes + toys + battries + 400}` );
+console.log(Price, 'Price: ' + currency + `${shoes + toys + battries + 400}` );
 
-}
+

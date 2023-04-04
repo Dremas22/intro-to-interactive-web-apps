@@ -2,6 +2,7 @@ const MAX_NUMBER = 10;
 const MIN_NUMBER = -6;
 
 const number = document.querySelector('[data-key="number"]');
+console.log(number)
 const add = document.querySelector('[data-key="addition"]');
 const subtract = document.querySelector('[data-key="subtraction"]')
 const reset = document.querySelector('[data-key="reset"]')
@@ -39,4 +40,3 @@ add.addEventListener('click', increaseHandler);
 subtract.addEventListener('click', decreaseHandler);
 reset.addEventListener('click', resettingHandler)
 
-console.log("Tshepo");
