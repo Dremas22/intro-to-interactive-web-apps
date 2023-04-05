@@ -41,7 +41,7 @@ const calShippingCost = () => {
 
 
 
-//---- USER BOUGHT SOME ITEMS, WE WANT TO TEST IF OUR ITINARY CODE CAN EXECUTE-----//
+//---- USER BOUGHT SOME ITEMS, WE WANT TO TEST IF OUR TERNARY CODE CAN EXECUTE-----//
 
 currency = "R";
 shoes = 300;

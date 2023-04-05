@@ -10,33 +10,31 @@ const sarahBalance = '-4582.21000111'
 const sarahNumber = '13'
 const sarahStreet = 'William Close'
 const sarahPostal = '0310'
-const sarahBalance = '-5'
 
 // Only change below this line
 
 const leo = {
-	name: leoName,
-	balance: leoBalance,
-	accessId: '47afb389-8014-4d0b-aff3-e40203d2107f',
+	name: 'Leo Musvaire',
+	balance: '-10',
+	access_Id: '47afb389-8014-4d0b-aff3-e40203d2107f',
 	age: 24,
 	address: {
 		number: leoNumber,
 		street: leoStreet,
-		postalCode: leoPostal
+		postal_Code: leoPostal
 	}
 }
 
 const sarah = {
 	name: sarahName,
-    surname: sarahSurname,
 	age: 62,
-	accessId: '6b279ae5-5657-4240-80e9-23f6b635f7a8',
+	access_Id: '6b279ae5-5657-4240-80e9-23f6b635f7a8',
 	balance: sarahBalance,
 	address: {
 		number: sarahNumber,
 		street: sarahStreet,
-		postalCode: sarahPostal
+		postal_Code: sarahPostal
 	}
 }
-console.log('leo', leo.address.postalCode);
-console.log('sarah', sarah.address.postalCode);
+console.log(leo, leo.address.postal_Code)
+console.log(sarah, sarah.address.postal_Code)
