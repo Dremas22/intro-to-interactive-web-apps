@@ -49,7 +49,7 @@ const holidays = {
 
     /*9: {
         id: 9,
-        name: "Tshepo"
+        name: "CodeSpace Holiday"
     } */
 }
 
@@ -60,7 +60,7 @@ const futureId = 9
 
 
 if (holidays[9]) {
-    console.log(holidays[9]);
+    console.log(holidays[9].name)
 }
 if (!holidays[9]) {
     console.log(`ID ${futureId} not created yet`)
@@ -68,7 +68,7 @@ if (!holidays[9]) {
 
 
 let copied = holidays[6];
-copied = { name: 'X-mas Day', date: new Date(`25 December ${currentYear} 00:00`) };
+copied = { name: 'X-mas Day', date: new Date(`25 December ${currentYear}`) };
 console.log(copied)
 
 let correctDate = holidays[6].date;
@@ -78,13 +78,14 @@ correctDate.minutes = 0
 isEarlier = copied.date < holidays[6].date
 console.log('New date is earlier:', isEarlier)
 if (isEarlier) copied.date = correctDate
+
 console.log('ID change:', holidays[6].id == copied.id)
 console.log('Name change:', copied.name = copied.name || copied.name)
 console.log('Date change:', holidays[christmas].date.toLocaleDateString({day: 25, month: 12, year: 2023}));
 
 //-------CONVERT OBJECT DATES TO NUMBER FOR MIN & MAX PURPOSE----//
 
-const date1 = new Date("16 December 2023").getTime();;
+const date1 = new Date("16 December 2023").getTime();
 const date2 = new Date("1 April 2023").getTime();
 const date3 = new Date("26 December 2023").getTime();
 const date4 = new Date("1 January 2023").getTime();
