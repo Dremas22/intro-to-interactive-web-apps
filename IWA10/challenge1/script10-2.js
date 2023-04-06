@@ -94,7 +94,7 @@ const date7 = new Date("25 December 2023").getTime();
 const date8 = new Date("16 June 2023").getTime();
 const date9 = new Date("21 March 2023").getTime();
 
-//----------END------//
+//----------DATES CONVERTION ------//
 
 let firstHolidayTimestamp = Math.min(date1, date2, date3, date4, date5, date6, date7, date8, date9);
 const dateFirst = new Date(firstHolidayTimestamp);

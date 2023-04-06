@@ -1,5 +1,4 @@
 const nickname = "Timmy";
-const firstname =   nickname || "Timothy";
+const firstname = nickname || "Timothy";
 
-
-console.log(`Good Morning,  ${firstname}`);
+console.log(`Good Morning, ${firstname}`);

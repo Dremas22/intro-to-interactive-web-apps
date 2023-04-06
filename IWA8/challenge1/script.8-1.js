@@ -19,21 +19,21 @@ const leo = {
 	access_Id: '47afb389-8014-4d0b-aff3-e40203d2107f',
 	age: 24,
 	address: {
-		number: leoNumber,
-		street: leoStreet,
-		postal_Code: leoPostal
+		number: '2',
+		street: 'Church St.',
+		postal_Code: '3105'
 	}
 }
 
 const sarah = {
-	name: sarahName,
+	name: 'Sarah    ',
 	age: 62,
 	access_Id: '6b279ae5-5657-4240-80e9-23f6b635f7a8',
-	balance: sarahBalance,
+	balance: '-4582.21000111',
 	address: {
-		number: sarahNumber,
-		street: sarahStreet,
-		postal_Code: sarahPostal
+		number: '13',
+		street: 'William Close',
+		postal_Code: '0310'
 	}
 }
 console.log(leo, leo.address.postal_Code)

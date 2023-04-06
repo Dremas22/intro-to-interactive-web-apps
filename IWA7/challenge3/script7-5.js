@@ -12,8 +12,8 @@ const divider = '----------------------------------'
 
 const owed = 'R' + " " + Math.abs(parseFloat(leoBalance) + parseFloat(sarahBalance)).toFixed(2);
 let newOwed = owed.toString().slice(0, 4) + " " + owed.toString().slice(3);
-const leo = " " + leoName + " " + leoSurname + " " + "(" + "Owed" + " " + "R" + " " + Math.abs(leoBalance).toFixed(2) + ")";
-const sarah = sarahName + sarahSurname + " " + "(" + "Owed" + " " + "R" + " " + Math.abs(sarahBalance).toFixed(2) + ")";
+const leo = " " + leoName.trim() + leoSurname + "(" + "Owed" + " " + "R" + " " + Math.abs(leoBalance).toFixed(2) + ")";
+const sarah = sarahName.trim() + "  " + sarahSurname + " " + "(" + "Owed" + " " + "R" + " " + Math.abs(sarahBalance).toFixed(2) + ")";
 const total = "Total amount owed: "+ " " + newOwed;
 
 //const result = leo + sarah + divider + divider + total + owed + divider
