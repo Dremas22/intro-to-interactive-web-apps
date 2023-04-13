@@ -99,6 +99,7 @@ const date9 = new Date("21 March 2023").getTime();
 
 let firstHolidayTimestamp = Math.min(date1, date2, date3, date4, date5, date6, date7, date8, date9);
 const dateFirst = new Date(firstHolidayTimestamp);
+
 const dayFirst = dateFirst.getUTCDate();
 const monthFirst = dateFirst.getUTCMonth() + 1;
 const yearFirst = dateFirst.getUTCFullYear();
