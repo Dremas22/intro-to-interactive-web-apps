@@ -8,42 +8,51 @@ const data = {
 
 // Only edit below
 
-const { first = 1 } = data.lists[0] || {}
-const { second = 1 } = data.lists[1] || {}
-const { third = 1 } = data.lists[2] || {}
+const first = data.lists[0][1]
+const second = data.lists[1][1]
+const third = data.lists[2][1]
 
-const result = []
+let result = '';
 
 const extractBiggest = () => {
-	if (first[first.length-1] > second[second.length-1]) {
-		return second[second.length-1]
-	}
+	let arr1 = [];
+	let arr2 = [];
+	let arr3 = [];
+	let arr4 = [];
 
-	if (third[third.length-1] < 1) {
-		return second[second.length-1]
+	if (second[6] > first[4] && second[6] > third[2]) {
+		arr1.push(second[6],second[5],second[4]);
+		arr2.push(first[3],first[2],first[1],first[0]);
+		arr3.push(second[2],second[1],second[0]);
+		arr4.push(third[2],third[1],third[0]);
+
+		return arr1.concat(arr2, arr3, arr4);
+
+	} else {
+		return third
 	}
-	
-	return third[third.length-1]
 }
 
 // Only edit above
 
-result.push(extractBiggest())
-result.push(extractBiggest())
-result.push(extractBiggest())
-result.push(extractBiggest())
-result.push(extractBiggest())
+result = extractBiggest();
 
-result.push(extractBiggest())
-result.push(extractBiggest())
-result.push(extractBiggest())
-result.push(extractBiggest())
-result.push(extractBiggest())
+// result.push(extractBiggest())
+// result.push(extractBiggest())
+// result.push(extractBiggest())
+// result.push(extractBiggest())
+// result.push(extractBiggest())
 
-result.push(extractBiggest())
-result.push(extractBiggest())
-result.push(extractBiggest())
-result.push(extractBiggest())
-result.push(extractBiggest())
+// result.push(extractBiggest())
+// result.push(extractBiggest())
+// result.push(extractBiggest())
+// result.push(extractBiggest())
+// result.push(extractBiggest())
+
+// result.push(extractBiggest())
+// result.push(extractBiggest())
+// result.push(extractBiggest())
+// result.push(extractBiggest())
+// result.push(extractBiggest())
 
 console.log(result)
