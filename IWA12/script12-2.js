@@ -49,29 +49,30 @@ const anotherbook = {
 
 let checkin_1 = document.getElementsByClassName('checkin')
 const checkinOne  = checkin_1[0];
-checkinOne.style = "black"
+checkinOne.style.color = "black"
 const status_1 = document.getElementsByClassName('status');
 const statusOne = status_1[0]
-statusOne.style = STATUS_MAP.overdue.color
+statusOne.style.color = STATUS_MAP.overdue.color
 
 let checkin_2 = document.getElementsByClassName('checkin')
 const checkinTwo = checkin_2[1];
-checkinTwo.style = 'black'
+checkinTwo.style.color = 'black'
 const status_2 = document.getElementsByClassName('status');
 const statusTwo = status_2[1]
-statusTwo.style = STATUS_MAP.reserved.color;
+statusTwo.style.color = STATUS_MAP.reserved.color;
 
 let checkin_3 = document.getElementsByClassName('checkin');
 const checkinThree = checkin_3[2];
-checkinThree.style = 'black';
+checkinThree.style.color = 'black';
 const status_3 = document.getElementsByClassName('status');
 const statusThree = status_3[2];
-statusThree.style = STATUS_MAP.shelf.color
+statusThree.style.color = STATUS_MAP.shelf.color
 
-goodbook.checkin1.style = 
+goodbook.checkin1.color = "";
 reserve1 = STATUS_MAP.overdue.canReserve ? 'enabled' : 'disabled'
 checkout1 = STATUS_MAP.overdue.canCheckout ? 'enabled' : 'disabled'
 checkin1 = STATUS_MAP.overdue.canCheckIn ? 'enabled' : 'disabled'
+
 
 book_of_books.checkin2.color = '';
 book_of_books.status2.style = STATUS_MAP.reserved.color;
