@@ -26,63 +26,45 @@ const STATUS_MAP = {
 }
 
 // Edit below line 
-const goodbook = {
-    status1: document.getElementsByClassName('status'),
-    reserve1: document.getElementsByClassName('reserve'),
-    checkout1: document.getElementsByClassName('checkout'),
-    checkin1: document.getElementsByClassName('checkin')
+
+const bookOne = {
+    reserve1: document.querySelector('#book1 button.reserve'),
+    checkout1: document.querySelector('#book1 button.checkout'),
+    checkin1: document.querySelector('#book1 button.checkin')
 }
 
-const book_of_books = {
-    status2: document.getElementsByClassName('status'),
-    reserve2: document.getElementsByClassName('reserve'),
-    checkout2: document.getElementsByClassName('checkout'),
-    checkin2: document.getElementsByClassName('checkin')
+const bookTwo = {
+    reserve2: document.querySelector('#book2 button.reserve'),
+    checkout2: document.querySelector('#book2 button.checkout'),
+    checkin2: document.querySelector('#book2 button.checkin')
 }
 
-const anotherbook = {
-    status3: document.getElementsByClassName('status'),
-    reserve3: document.getElementsByClassName('reserve'),
-    checkout3: document.getElementsByClassName('checkout'),
-    checkin3: document.getElementsByClassName('checkin')
+const bookThree = {
+    reserve3: document.querySelector('#book3 button.reserve'),
+    checkout3: document.querySelector('#book3 button.checkout'),
+    checkin3: document.querySelector('#book3 button.checkin')
 }
 
-let checkin_1 = document.getElementsByClassName('checkin')
-const checkinOne  = checkin_1[0];
-checkinOne.style.color = "black"
+bookOne.checkin1.style.color = ""
 const status_1 = document.getElementsByClassName('status');
-const statusOne = status_1[0]
-statusOne.style.color = STATUS_MAP.overdue.color
+let status1 = status_1[0]
+status1.style.color = STATUS_MAP.overdue.color
+bookOne.reserve1 = STATUS_MAP.overdue.canReserve ? enabled : bookOne.reserve1.disabled = true
+bookOne.checkout1 = STATUS_MAP.overdue.canCheckout ? enabled : bookOne.checkout1.disabled = true
+bookOne.checkin1 = STATUS_MAP.overdue.canCheckIn ? bookOne.checkout1.disabled = false : disabled
 
-let checkin_2 = document.getElementsByClassName('checkin')
-const checkinTwo = checkin_2[1];
-checkinTwo.style.color = 'black'
+bookTwo.checkin2.style.color = ""
 const status_2 = document.getElementsByClassName('status');
-const statusTwo = status_2[1]
-statusTwo.style.color = STATUS_MAP.reserved.color;
+let status2 = status_2[1]
+status2.style.color = STATUS_MAP.reserved.color
+bookTwo.reserve2 = STATUS_MAP.reserved.canReserve ? enabled : bookTwo.reserve2.disabled = true
+bookTwo.checkout2 = STATUS_MAP.reserved.canCheckout ? bookTwo.checkout2.disabled = false : disabled
+bookTwo.checkin2 = STATUS_MAP.reserved.canCheckIn ? enabled : bookTwo.checkin2.disabled = true
 
-let checkin_3 = document.getElementsByClassName('checkin');
-const checkinThree = checkin_3[2];
-checkinThree.style.color = 'black';
+bookThree.checkin3.style.color = ""
 const status_3 = document.getElementsByClassName('status');
-const statusThree = status_3[2];
-statusThree.style.color = STATUS_MAP.shelf.color
-
-goodbook.checkin1.color = "";
-reserve1 = STATUS_MAP.overdue.canReserve ? 'enabled' : 'disabled'
-checkout1 = STATUS_MAP.overdue.canCheckout ? 'enabled' : 'disabled'
-checkin1 = STATUS_MAP.overdue.canCheckIn ? 'enabled' : 'disabled'
-
-
-book_of_books.checkin2.color = '';
-book_of_books.status2.style = STATUS_MAP.reserved.color;
-reserve2 = STATUS_MAP.reserved.canReserve ? 'enabled' : 'disabled'
-checkout2 = STATUS_MAP.reserved.canCheckout ? 'enabled' : 'disabled'
-checkin_2 = STATUS_MAP.reserved.canCheckIn ? 'enabled' : 'disabled'
-
-anotherbook.checkin3.color = '';
-anotherbook.status3.style = STATUS_MAP.checkedOut.color
-reserve3 = STATUS_MAP.checkedOut.canReserve ? 'enabled' : 'disabled'
-checkout3 = STATUS_MAP.checkedOut.canCheckout ? 'enabled' : 'disabled'
-checkin3 = STATUS_MAP.checkedOut.canCheckIn ? 'enabled' : 'disabled'
-
+let status3 = status_3[2]
+status3.style.color = STATUS_MAP.shelf.color;
+bookThree.reserve3 = STATUS_MAP.shelf.canReserve ? bookThree.reserve3.disabled = true : disabled
+bookThree.checkout3 = STATUS_MAP.shelf.canCheckout ? bookThree.reserve3.disabled = true : disabled
+bookThree.checkin3 = STATUS_MAP.shelf.canCheckIn ? enabled : bookThree.reserve3.disabled = false
