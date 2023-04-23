@@ -6,21 +6,24 @@ const data = {
 	]
 }
 
+
 // Only edit below
 
 const first = data.lists[0][1]
 const second = data.lists[1][1]
 const third = data.lists[2][1]
 
+console.log(first[4])
+
 const result = [];
 
 
 const extractBiggest = () => {
 	
-	if ( first[first.length - 1] >= second[second.length - 1] && first[first.length - 1] >= third[third.length - 1]) {
+	if (first[first.length -1] > second[second.length -1] && first[first.length -1] > third[third.length -1]) {
 		return first.pop()
 	}
-	if (second[second.length - 1] >= third[third.length - 1]) {
+	if (second[second.length -1] > third[third.length -1]) {
 		return second.pop()
 	}
 	return third.pop()

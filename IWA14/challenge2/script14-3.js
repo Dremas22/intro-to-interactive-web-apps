@@ -34,5 +34,5 @@ const example2 = {
   calculate: internal
 }
 
-console.log(example1.calculate())
-console.log(example2.calculate())
+example1.calculate()
+example2.calculate()
