@@ -86,7 +86,11 @@ const createHtml = (strClass) => {
         if (i === 0) {
             strClass = "table__cell" + " " + "table__cell_weekend"
             elem1 = `${elem1}<th class="${strClass}">${arrMonth[0][0]}</th>`;
-        } else {
+        } else if (i === 7) {
+            strClass = "table__cell" + " " + "table__cell_weekend"
+            elem1 = `${elem1}<th class="${strClass}">${arrMonth[0][7]}</th>`;
+        }
+         else {
             elem1 = `${elem1}<th class="${strClass}">${arrMonth[0][i]}</th>`;
         }
     
@@ -109,12 +113,16 @@ const createHtml = (strClass) => {
     arrMonth[1][7] = 8
     let elem2 = '';
     for (let i = 0; i < arrMonth[1].length; i++) {
-        let strClass = "table__cell";
+        let strClass = "table__cell" + " " + "table__cell_alternate";
     
         if (i === 0) {
-            strClass = "table__cell" + " " + "table__cell_weekend"
+            strClass = "table__cell_alternate" + " " + "table__cell_weekend"
             elem2 = `${elem2}<th class="${strClass}">${arrMonth[1][0]}</th>`;
-        } else {
+        } else if (i === 7) {
+            strClass = "table__cell_alternate" + " " + "table__cell_weekend"
+            elem2 = `${elem2}<th class="${strClass}">${arrMonth[1][7]}</th>`;
+        }
+        else {
             elem2 = `${elem2}<th class="${strClass}">${arrMonth[1][i]}</th>`;
         }
     
@@ -143,7 +151,11 @@ const createHtml = (strClass) => {
         if (i === 0) {
             strClass = "table__cell" + " " + "table__cell_weekend"
             elem3 = `${elem3}<th class="${strClass}">${arrMonth[2][0]}</th>`;
-        } else {
+        } else if (i === 7) {
+            strClass = "table__cell" + " " + "table__cell_weekend"
+            elem3 = `${elem3}<th class="${strClass}">${arrMonth[2][7]}</th>`;
+        }
+        else {
             elem3 = `${elem3}<th class="${strClass}">${arrMonth[2][i]}</th>`;
         }
     
@@ -165,12 +177,16 @@ const createHtml = (strClass) => {
     arrMonth[3][7] = 22
     let elem4 = ""
     for (let i = 0; i < arrMonth[3].length; i++) {
-        strClass = "table__cell";
+        strClass = "table__cell" + " " + "table__cell_alternate";
     
         if (i === 0) {
-            strClass = "table__cell" + " " + "table__cell_weekend"
+            strClass = "table__cell_alternate" + " " + "table__cell_weekend" 
             elem4 = `${elem4}<th class="${strClass}">${arrMonth[3][0]}</th>`;
-        } else {
+        } else if (i === 7) {
+            strClass = "table__cell_alternate" + " " + "table__cell_weekend"
+            elem4 = `${elem4}<th class="${strClass}">${arrMonth[3][7]}</th>`;
+        }
+        else {
             elem4 = `${elem4}<th class="${strClass}">${arrMonth[3][i]}</th>`;
         }
     
@@ -204,7 +220,11 @@ const createHtml = (strClass) => {
                 strClass = "table__cell" + " " + "table__cell_today"
                 elem5 = `${elem5}<th class="${strClass}">${arrMonth[4][i]}</th>`
             
-        } else {
+        } else if (i === 7) {
+            strClass = "table__cell" + " " + "table__cell_weekend"
+            elem5 = `${elem5}<th class="${strClass}">${arrMonth[4][7]}</th>`;
+        }
+         else {
             elem5 = `${elem5}<th class="${strClass}">${arrMonth[4][i]}</th>`
         }
     
