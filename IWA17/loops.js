@@ -13,19 +13,18 @@ const MONTHS = [
     'December',
 ]
 
-//const getDaysInMonth = (date) => new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate()
+const getDaysInMonth = (date) => new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate()
 
 // Only edit below 
 
 /**
- * This day vasriable is extracted from the date method to get the current day buy number of days in a  week.
+ * This day vasriable is extracted from the date method to get the current day by number of days in a  week.
  * @param {String ('')} day
  */
 
 const date = new Date();
 const month = MONTHS[date.getMonth()]
 const day = date.getDate()
-
 
 /**
  * The day variable gets current date.
@@ -52,7 +51,6 @@ const createArrays = (arrDays, arrWeeks, arrMonth) => {
     
 }
 
-
 /**
  * This array contains combination of arrDays and arrWees and place them in a 
  * numeracal order.
@@ -61,15 +59,12 @@ const createArrays = (arrDays, arrWeeks, arrMonth) => {
 
 const { arrMonth } = createArrays();
 
-
 /**
  * This array contains combination of arrDays and arrWees and place them in a 
  * numeracal order.
  * @param {String ('')} day
  * @param {String []} arrMonth -
  */
-
-
 
 const createHtml = (strClass) => {
 
@@ -78,7 +73,6 @@ const createHtml = (strClass) => {
 
     arrMonth[0][0] = "Week 1"
     arrMonth[0][7] = 1
-    
     let elem1 = '';
     for (let i = 0; i < arrMonth[0].length; i++) {
         strClass = "table__cell";
@@ -146,8 +140,7 @@ const createHtml = (strClass) => {
     arrMonth[2][7] = 15
     let elem3 = '';
     for (let i = 0; i < arrMonth[2].length; i++) {
-        let strClass = "table__cell";
-    
+        let strClass = "table__cell";   
         if (i === 0) {
             strClass = "table__cell" + " " + "table__cell_weekend"
             elem3 = `${elem3}<th class="${strClass}">${arrMonth[2][0]}</th>`;
@@ -178,7 +171,6 @@ const createHtml = (strClass) => {
     let elem4 = ""
     for (let i = 0; i < arrMonth[3].length; i++) {
         strClass = "table__cell" + " " + "table__cell_alternate";
-    
         if (i === 0) {
             strClass = "table__cell_alternate" + " " + "table__cell_weekend" 
             elem4 = `${elem4}<th class="${strClass}">${arrMonth[3][0]}</th>`;
@@ -210,9 +202,6 @@ const createHtml = (strClass) => {
     let elem5 = "";
     for (let i = 0; i < arrMonth[4].length; i++) {
         strClass = "table__cell";
-
-        
-    
         if (i === 0) {
             strClass = "table__cell" + " " + "table__cell_weekend"
             elem5 = `${elem5}<th class="${strClass}">${arrMonth[4][0]}</th>`;
@@ -238,12 +227,10 @@ const createHtml = (strClass) => {
 }
 createHtml()
 
-
-
 // Only edit above
 
 const current = new Date()
 document.querySelector('[data-title]').innerText = `${MONTHS[current.getMonth()]} ${current.getFullYear()}`
 
-// // const data = createData()
-// // document.querySelector('[data-content]').innerHTML = createHtml(data)
+const data = createData()
+document.querySelector('[data-content]').innerHTML = createHtml(data)
