@@ -34,21 +34,46 @@ const handleDragOver = (event) => {
     updateDraggingHtml({ over: column })
 }
 
+const divOrdered = document.querySelector('[data-column="ordered"]')
+const divPrepared = document.querySelector('[data-column="preparing"]')
+const divServed = document.querySelector('[data-column="served"]')
 
 
-const handleDragStart = () => {
+// const handleDragStart = (event) => {
+//     event.preventDefault()
+
+//         event.dataTransfer.setData('text/plain', event.divPrepared.id)
+//     for (const htmlColumn of Object.values(html.columns)) {
+//         htmlColumn.removeEventListener('dragstart', handleDragStart);
+//     }
+// }
+divOrdered.addEventListener('dragstart', (e) => {
+    e.dataTransfer.setData('text/plain', e.divPrepared.dataset)
+})
+
+divPrepared.addEventListener('dragover', (e) => {
+    e.preventDefault();
+})
+
+divPrepared.addEventListener('drop', (e) => {
+    e.preventDefault()
+    const srcDivOrdered =  e.dataTransfer.setData('text/plain')
+})
+
+
+const handleDragEnd = (event) => {
+
+    const id = event.dataTransfer.getData('text/plain');
+    const newColumn = dragging.over;
+    moveToColumn(id, newColumn);
+    
     for (const htmlColumn of Object.values(html.columns)) {
-        htmlColumn.addEventListener('dragstart', handleDragStart)
+        htmlColumn.removeEventListener('dragover', handleDragOver);
+        htmlColumn.removeEventListener('dragend', handleDragEnd);
     }
-    //moveToColumn()
 }
+divPrepared.addEventListener('dragend', handleDragEnd)
 
-const handleDragEnd = () => {
-    for (const htmlColumn of Object.values(html.columns)) {
-        htmlColumn.addEventListener('dragend', handleDragEnd)
-    }
-    // moveToColumn()
-}
 
 //------------ADDING ORDER----------------//
 const handleAddToggle1 = () => {
@@ -73,39 +98,94 @@ const handleHelpToggle2 = () => {
 html.help.cancel.addEventListener('click', handleHelpToggle2);
 
 //------------------SUBMITTING ORDER----------------------------//
+const state = {
+    orders: {}
+}
 
-const submitOrder = document.querySelector('button[form="add-form"]');
 const handleAddSubmit = (event) => {
     event.preventDefault()
 
-    const orderedColumn = document.querySelector('[data-column="ordered"]')
-    let title = html.add.title
-    let table = html.add.table
-    let column = html.columns[0].id
-    const orderData = createOrderData({title, table, column});
-    const orderHTML = createOrderHtml(orderData);
+    const dataOrder = document.querySelector('[data-column="ordered"]')
+    const title = html.add.title.value;
+    const table = html.add.table.value;
 
-    const orderElement = orderHTML.querySelector('[data-order-title]');
-    orderedColumn.insertAdjacentHTML('afterbegin', orderHTML);
-    orderElement.style.display = 'visible'
+    const id = Object.keys(state.orders).length + 1;
+    const created = new Date();
+    const order = createOrderData({ id, title, table, created });
+    const orderElement = createOrderHtml(order);
 
-    orderElement()
-};     
+    dataOrder.insertAdjacentElement('beforeend', orderElement)
 
-submitOrder.addEventListener('submit', handleAddSubmit);
+    html.add.form.reset();
+    html.add.overlay.close();
 
-//------------------END OF SUBMITTING ORDER SECTION----------------------------//
+};
+html.add.form.addEventListener('submit', handleAddSubmit);
 
-// const handleEditToggle = (event) => {}
-// const handleEditSubmit = (event) => {}
-// const handleDelete = (event) => {}
+console.log()
 
-// html.other.grid.addEventListener('click', handleEditToggle)
-// html.edit.cancel.addEventListener('click', handleEditToggle)
-// html.edit.form.addEventListener('submit', handleEditSubmit)
-// html.edit.delete.addEventListener('click', handleDelete)
+//------------------EDITTING ORDER SECTION----------------------------//
 
-for (const htmlArea of Object.values(html.area)) {
+const dataOrder = document.querySelector('[data-column="ordered"]')
+const handleEditToggle1 = (event) => {
+    event.preventDefault()
 
-    htmlArea.addEventListener('dragover', handleDragOver)
+    const dataTitle1 = document.querySelector('[data-order-title]')
+    const editTitle1 = dataTitle1.innerText;
+    html.edit.title.value = editTitle1
+
+    const dataTable1 = document.querySelector('[data-order-table]');
+    const editTable1 = dataTable1.innerText;
+    html.edit.table.value = editTable1
+
+    html.edit.overlay.style.display = "block"
+
+};
+dataOrder.addEventListener('click', handleEditToggle1)
+
+const handleEditToggle = () => {
+    html.edit.overlay.style.display = "none"
 }
+html.edit.cancel.addEventListener('click', handleEditToggle)
+
+//------------------SUBMITTING EDITED DATA ORDER ----------------------------//
+
+//const update = document.querySelector('[form="edit-form"]')
+const handleEditSubmit = (event) => {
+    event.preventDefault();
+
+
+    const dataTitle1 = document.querySelector('[data-order-title]')
+    dataTitle1.textContent = html.edit.title.value;
+
+    const dataTable1 = document.querySelector('[data-order-table]');
+    dataTable1.textContent = html.edit.table.value;
+
+    const divPrepared = document.querySelector('[data-column="preparing"]')
+    const divServed = document.querySelector('[data-area="served"]')
+    if (state == "Ordered") {
+        html.edit.overlay.style.display = "none"
+    } else if (state == "Preparing") {
+        divPrepared.insertAdjacentElement('beforeend', dataOrder)
+        html.edit.overlay.style.display = "none"
+    } else if (state == "Served") {
+        divServed.insertAdjacentElement('beforeend', dataOrder)
+        html.edit.overlay.style.display = "none"
+    }
+
+};
+html.edit.form.addEventListener('submit', handleEditSubmit);
+
+
+//----DELETING THE EDITTED DATA-------------//
+
+const handleDelete = (event) => {
+    event.preventDefault()
+
+    const dataOrder = document.querySelector('[data-column="ordered"]')
+    dataOrder.remove()
+
+    html.edit.overlay.style.display = "none";
+
+}
+html.edit.delete.addEventListener('click', handleDelete)
