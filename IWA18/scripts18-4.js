@@ -2,7 +2,6 @@
 import { updateDragging, createOrderData } from './data.js'
 import { updateDraggingHtml, html, createOrderHtml, moveToColumn } from './view.js'
 
-
 /**
  * A handler that fires when a user drags over any element inside a column. In
  * order to determine which column the user is dragging over the entire event
@@ -34,35 +33,7 @@ const handleDragOver = (event) => {
     updateDraggingHtml({ over: column })
 }
 
-const divOrdered = document.querySelector('[data-column="ordered"]')
-const divPrepared = document.querySelector('[data-column="preparing"]')
-const divServed = document.querySelector('[data-column="served"]')
 
-
-// const handleDragStart = (event) => {
-//     event.preventDefault()
-
-//         event.dataTransfer.setData('text/plain', event.divPrepared.id)
-//     for (const htmlColumn of Object.values(html.columns)) {
-//         htmlColumn.removeEventListener('dragstart', handleDragStart);
-//     }
-// }
-divOrdered.addEventListener('dragstart', (e) => {
-    e.preventDefault();
-})
-
-
-const handleDragEnd = (e) => {
-    e.preventDefault()
-
-    const id = divPrepared.dataset.id;
-    const newColumn = dragging.over;
-    for (const htmlColumn of Object.values(html.columns)) {
-        htmlColumn = newColumn
-        moveToColumn(id, newColumn);
-    }
-}
-divPrepared.addEventListener('dragend', handleDragEnd)
 
 
 //------------ADDING ORDER----------------//
@@ -113,10 +84,7 @@ const handleAddSubmit = (event) => {
 };
 html.add.form.addEventListener('submit', handleAddSubmit);
 
-
-
 //------------------EDITTING ORDER SECTION----------------------------//
-
 
 const areaOrder = document.querySelector('[data-column="ordered"]')
 const handleEditToggle1 = (event) => {
@@ -134,7 +102,6 @@ const handleEditToggle1 = (event) => {
 
 };
 areaOrder.addEventListener('click', handleEditToggle1)
-
 
 const handleEditToggle = () => {
     html.edit.overlay.style.display = "none"
@@ -159,18 +126,19 @@ const handleEditSubmit = (event) => {
 
 
     const divPrepared = document.querySelector('[data-column="preparing"]')
-    const divServed = document.querySelector('[data-area="served"]')
-    const orderSelect = document.querySelectorAll('[data-area="ordered"]')
+    const divServed = document.querySelector('[data-column="served"]')
     
-    if (orderSelect === "Preparing") {
-        let id = '[data-column="ordered"]'
-        let newColumn = divPrepared
+    let status = ""
+    
+    if (status === "Preparing") {
+        let id = divPrepared.dataset
+        let newColumn = COLUMNS[1]
         moveToColumn(id, newColumn)
         html.edit.overlay.style.display = "none"
 
-    } else if (orderSelect === "Served") {
-        let id = '[data-column="ordered"]'
-        let newColumn = divServed
+    } else if (status === "Served") {
+        let id = divServed.dataset
+        let newColumn = COLUMNS[2]
         moveToColumn(id, newColumn)
         html.edit.overlay.style.display = "none"
 
@@ -182,16 +150,33 @@ const handleEditSubmit = (event) => {
 };
 html.edit.form.addEventListener('submit', handleEditSubmit);
 
-
 //----DELETING THE EDITTED DATA-------------//
 
 const handleDelete = (event) => {
     event.preventDefault()
 
     areaOrder.remove()
-
     html.edit.overlay.style.display = "none"
-
     
 }
 html.edit.delete.addEventListener('click', handleDelete)
+
+//----DRAGGING DIV FROM 1 COLUMN TO THEW OTHER-------------//
+
+let dragger;
+const handleDragStart = (e) => {
+  dragger = e.target;
+};
+const handleDragDrop = (e) => {
+  e.target.append(dragger);
+};
+const handleDragEnd = (e) => {
+  const section = e.target.closest("section");
+  section.style.backgroundColor = "";
+};
+for (const htmlArea of Object.values(html.area)) {
+  htmlArea.addEventListener("dragover", handleDragOver);
+  htmlArea.addEventListener("dragstart", handleDragStart);
+  htmlArea.addEventListener("drop", handleDragDrop);
+  htmlArea.addEventListener("dragend", handleDragEnd);
+}
