@@ -42,13 +42,14 @@ const createArrays = (arrDays, arrWeeks, arrMonth) => {
     arrMonth = Array(5).fill().map(() => Array(7).fill([]));
     for (let i = 0; i < arrMonth.length; i++) {
         for (let j = 0; j < arrMonth[i].length; j++) {
-          arrMonth[i][j];
+            arrMonth[i][j];
+            
         }
-      
+
     }
-    
-    return { arrDays, arrWeeks, arrMonth}
-    
+   
+    return { arrDays, arrWeeks, arrMonth }
+
 }
 
 /**
@@ -66,28 +67,38 @@ const { arrMonth } = createArrays();
  * @param {String []} arrMonth -
  */
 
+
+
 const createHtml = (strClass) => {
 
     const thead = document.querySelector('thead');
     const tr1 = document.createElement('tr');
 
     arrMonth[0][0] = "Week 1"
-    arrMonth[0][7] = 1
+    arrMonth[0][2] = 1
+    arrMonth[0][3] = 2
+    arrMonth[0][4] = 3
+    arrMonth[0][5] = 4
+    arrMonth[0][6] = 5
+    arrMonth[0][7] = 6
     let elem1 = '';
     for (let i = 0; i < arrMonth[0].length; i++) {
         strClass = "table__cell";
-    
+
         if (i === 0) {
             strClass = "table__cell" + " " + "table__cell_weekend"
             elem1 = `${elem1}<th class="${strClass}">${arrMonth[0][0]}</th>`;
         } else if (i === 7) {
             strClass = "table__cell" + " " + "table__cell_weekend"
             elem1 = `${elem1}<th class="${strClass}">${arrMonth[0][7]}</th>`;
+        } else if (arrMonth[0][i] === day) {
+            strClass = "table__cell" + " " + "table__cell_today"
+            elem1 = `${elem1}<th class="${strClass}">${arrMonth[0][i]}</th>`
         }
-         else {
+        else {
             elem1 = `${elem1}<th class="${strClass}">${arrMonth[0][i]}</th>`;
         }
-    
+
     }
 
     tr1.innerHTML = `<tr>
@@ -96,32 +107,32 @@ const createHtml = (strClass) => {
     thead.appendChild(tr1)
 
     const tr2 = document.createElement('tr');
-    
+
     arrMonth[1][0] = "Week 2"
-    arrMonth[1][1] = 2
-    arrMonth[1][2] = 3
-    arrMonth[1][3] = 4
-    arrMonth[1][4] = 5
-    arrMonth[1][5] = 6
-    arrMonth[1][6] = 7
-    arrMonth[1][7] = 8
+    arrMonth[1][1] = 7
+    arrMonth[1][2] = 8
+    arrMonth[1][3] = 9
+    arrMonth[1][4] = 10
+    arrMonth[1][5] = 11
+    arrMonth[1][6] = 12
+    arrMonth[1][7] = 13
     let elem2 = '';
     for (let i = 0; i < arrMonth[1].length; i++) {
         let strClass = "table__cell" + " " + "table__cell_alternate";
-    
+
         if (i === 0) {
             strClass = "table__cell_alternate" + " " + "table__cell_weekend"
             elem2 = `${elem2}<th class="${strClass}">${arrMonth[1][0]}</th>`;
         } else if (i === 7) {
             strClass = "table__cell_alternate" + " " + "table__cell_weekend"
             elem2 = `${elem2}<th class="${strClass}">${arrMonth[1][7]}</th>`;
-        }
+        } 
         else {
             elem2 = `${elem2}<th class="${strClass}">${arrMonth[1][i]}</th>`;
         }
-    
+
     }
-    
+
     tr2.innerHTML = `<tr>
                         ${elem2}
                       </tr>`
@@ -140,7 +151,7 @@ const createHtml = (strClass) => {
     arrMonth[2][7] = 15
     let elem3 = '';
     for (let i = 0; i < arrMonth[2].length; i++) {
-        let strClass = "table__cell";   
+        let strClass = "table__cell";
         if (i === 0) {
             strClass = "table__cell" + " " + "table__cell_weekend"
             elem3 = `${elem3}<th class="${strClass}">${arrMonth[2][0]}</th>`;
@@ -151,7 +162,7 @@ const createHtml = (strClass) => {
         else {
             elem3 = `${elem3}<th class="${strClass}">${arrMonth[2][i]}</th>`;
         }
-    
+
     }
     tr3.innerHTML = `<tr>
                         ${elem3}
@@ -161,18 +172,18 @@ const createHtml = (strClass) => {
 
     const tr4 = document.createElement('tr');
     arrMonth[3][0] = "Week 4"
-    arrMonth[3][1] = 16
-    arrMonth[3][2] = 17
-    arrMonth[3][3] = 18
-    arrMonth[3][4] = 19
-    arrMonth[3][5] = 20
-    arrMonth[3][6] = 21
-    arrMonth[3][7] = 22
+    arrMonth[3][1] = 14
+    arrMonth[3][2] = 16
+    arrMonth[3][3] = 17
+    arrMonth[3][4] = 18
+    arrMonth[3][5] = 19
+    arrMonth[3][6] = 20
+    arrMonth[3][7] = 21
     let elem4 = ""
     for (let i = 0; i < arrMonth[3].length; i++) {
         strClass = "table__cell" + " " + "table__cell_alternate";
         if (i === 0) {
-            strClass = "table__cell_alternate" + " " + "table__cell_weekend" 
+            strClass = "table__cell_alternate" + " " + "table__cell_weekend"
             elem4 = `${elem4}<th class="${strClass}">${arrMonth[3][0]}</th>`;
         } else if (i === 7) {
             strClass = "table__cell_alternate" + " " + "table__cell_weekend"
@@ -181,7 +192,7 @@ const createHtml = (strClass) => {
         else {
             elem4 = `${elem4}<th class="${strClass}">${arrMonth[3][i]}</th>`;
         }
-    
+
     }
     tr4.innerHTML = `<tr>
                         ${elem4}
@@ -192,13 +203,13 @@ const createHtml = (strClass) => {
     const tr5 = document.createElement('tr');
 
     arrMonth[4][0] = "Week 5"
-    arrMonth[4][1] = 23
-    arrMonth[4][2] = 24
-    arrMonth[4][3] = 25
-    arrMonth[4][4] = 26
-    arrMonth[4][5] = 27
-    arrMonth[4][6] = 28
-    arrMonth[4][7] = 29
+    arrMonth[4][1] = 22
+    arrMonth[4][2] = 23
+    arrMonth[4][3] = 24
+    arrMonth[4][4] = 25
+    arrMonth[4][5] = 26
+    arrMonth[4][6] = 27
+    arrMonth[4][7] = 28
     let elem5 = "";
     for (let i = 0; i < arrMonth[4].length; i++) {
         strClass = "table__cell";
@@ -206,17 +217,17 @@ const createHtml = (strClass) => {
             strClass = "table__cell" + " " + "table__cell_weekend"
             elem5 = `${elem5}<th class="${strClass}">${arrMonth[4][0]}</th>`;
         } else if (arrMonth[4][i] === day) {
-                strClass = "table__cell" + " " + "table__cell_today"
-                elem5 = `${elem5}<th class="${strClass}">${arrMonth[4][i]}</th>`
-            
+            strClass = "table__cell" + " " + "table__cell_today"
+            elem5 = `${elem5}<th class="${strClass}">${arrMonth[4][i]}</th>`
+
         } else if (i === 7) {
             strClass = "table__cell" + " " + "table__cell_weekend"
             elem5 = `${elem5}<th class="${strClass}">${arrMonth[4][7]}</th>`;
         }
-         else {
+        else {
             elem5 = `${elem5}<th class="${strClass}">${arrMonth[4][i]}</th>`
         }
-    
+
     }
     tr5.innerHTML = `<tr>
                         ${elem5}

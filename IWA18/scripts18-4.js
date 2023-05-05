@@ -73,6 +73,7 @@ const handleAddSubmit = (event) => {
     const id = Object.keys(state.orders).length + 1;
     const created = new Date();
     const order = createOrderData({ id, title, table, created });
+    state.orders[id] = order
     const orderElement = createOrderHtml(order);
 
 
